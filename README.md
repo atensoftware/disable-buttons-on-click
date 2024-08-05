@@ -44,5 +44,6 @@ Just three steps, as promised.
 
 ## Advanced usage
 
+* Customize the icon image
 * Defining the selector for `<INPUT>` tags
 * Multiple sets of buttons on the page
