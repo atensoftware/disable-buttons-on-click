@@ -16,7 +16,8 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 * Animated icons (e.g. spinners) - On low-power devices, animations consume CPU cyles and drain battery.  On low bandwidth remote desktop sessions, animations cause very poor performance for no substantial benefit.
 * Replace button with 'wait' icon - Causes layout shift (poor user experience).
 * Full-page overlay - User can not open any links in new windows or tabs.  User can not scroll the page to view content below the fold.  User can not read the page content because it is obscured. Effectively kills multi-tasking.
-* Disable the clicked button only - Other action buttons can still be clicked, causing sequencing issues.
+* Disable all buttons on the page - Common, non-submitting buttons like Reset, Copy to Clipboard, and Hide/Show become non-functional, for no reason.
+* Disable the clicked button only - Other submit buttons can still be clicked, causing sequencing issues.
 
 ## Solution provided by this script
 
