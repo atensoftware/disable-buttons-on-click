@@ -23,7 +23,7 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 
 * Free and open-source
 * Single script with no dependencies
-* Show a static, non-animated wait icon in the background of the button (zero layout shift)
+* Show a static, non-animated wait icon in the background of the button, auto-sized to the button (absolute zero layout shift)
 * Three-step implementation using declarative-syntax
 * Only select buttons are disabled, not the whole page, allowing user to continue multi-tasking
 
