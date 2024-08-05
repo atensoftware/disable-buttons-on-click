@@ -22,19 +22,19 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 * Single script with no dependencies
 * Show a static, non-animated wait icon in the background of the button (zero layout shift)
 * Three-step implementation using declarative-syntax
-* Only select buttons are disabled, not the whole page, allowing user to continue multi-tasking.
+* Only select buttons are disabled, not the whole page, allowing user to continue multi-tasking
 
 ## How to use
 
 1. Include the script in `<HEAD>` section of the page: `<script src="disable-buttons-on-click.js">`
-    1. You can include this script site-wide without performance impact, since it only defines functions and does not run anything.
+   - You can include this script site-wide without performance impact, since it only defines functions and does not run anything.
 1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` in the onload event to set up the buttons.
-   1. In `<BODY>` tag: `<body onload="InitializeDisableButtons();">`
-   1. Plain Javascript in `<HEAD>` tag: `window.onload = function() { InitializeDisableButtons(); }`
-   1. Using jQuery: `$(document).ready(function() { InitializeDisableButtons(); });`
+   - In `<BODY>` tag: `<body onload="InitializeDisableButtons();">`
+   - Plain Javascript in `<HEAD>` tag: `window.onload = function() { InitializeDisableButtons(); }`
+   - Using jQuery: `$(document).ready(function() { InitializeDisableButtons(); });`
 3. Assign the `DisableOnClick` class to the buttons that should be disabled on click.
-   1. `<button type="submit" class="DisableOnClick">Any markup here</button>`
-   1. `<button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>`
+   - `<button type="submit" class="DisableOnClick">Any markup here</button>`
+   - `<button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>`
 
 Just three steps, as promised.
 
