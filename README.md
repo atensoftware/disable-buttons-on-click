@@ -31,28 +31,31 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 ## How to use
 
 1. Include the script in `<HEAD>` section of the page (or all pages in your site):
-   ```
+   ```html
    <script src="disable-buttons-on-click.js">
    ```
 1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` when the page loads to set up the buttons.
    - Plain Javascript:
-     ```
+     ```html
      document.addEventListener('DOMContentLoaded', function () {
        DisableButtonsOnClick.utils.InitializeDisableButtons();
      });
      ```
    - Using jQuery:
-     ```
+     ```html
      $(document).ready(function() {
        DisableButtonsOnClick.utils.InitializeDisableButtons();
      });
      ```
 3. Assign the `DisableOnClick` class to the buttons that should be disabled on click.  Examples:
-   ```
+   ```html
+   <!-- Just assign the class to the existing buttons -->
    <button type="submit" class="DisableOnClick">Any markup here</button>
-   <button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>
+   <button type="button" class="DisableOnClick" onclick="DoSomething();">Any markup here</button>
+
    <!-- 'reset' buttons do not trigger the disabling logic -->
    <button type="reset" class="DisableOnClick">Reset</button>
+
    <!-- Example of 'Cancel' button, to allow user to stop waiting and re-enable the buttons -->
    <button type="button" onclick="location.reload();">Cancel</button>
    ```
