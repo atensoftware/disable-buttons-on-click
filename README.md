@@ -51,7 +51,8 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
    ```
    <button type="submit" class="DisableOnClick">Any markup here</button>
    <button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>
-   <button type="reset" class="DisableOnClick">Reset</button> (Note: 'reset' buttons do not trigger the disabling logic)
+   <button type="reset" class="DisableOnClick">Reset</button>
+   Note: 'reset' buttons do not trigger the disabling logic
    ```
 
 Just three steps, as promised.
