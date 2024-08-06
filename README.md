@@ -76,7 +76,7 @@ unless you preload the image too.
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
   // Use an orange hourglass instead of the default clock icon
-  DisableButtonsOnClick.utils.DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://icongr.am/octicons/hourglass.svg?color=ff8000"
+  DisableButtonsOnClick.utils.DISABLE_BUTTONS_WAIT_IMAGE_URL = "https://icongr.am/octicons/hourglass.svg?color=ff8000";
   DisableButtonsOnClick.utils.InitializeDisableButtons();
 });
 ```
