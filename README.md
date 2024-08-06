@@ -36,13 +36,13 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
    ```
 1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` when the page loads to set up the buttons.
    - Plain Javascript:
-     ```html
+     ```javascript
      document.addEventListener('DOMContentLoaded', function () {
        DisableButtonsOnClick.utils.InitializeDisableButtons();
      });
      ```
    - Using jQuery:
-     ```html
+     ```javascript
      $(document).ready(function() {
        DisableButtonsOnClick.utils.InitializeDisableButtons();
      });
