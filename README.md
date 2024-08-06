@@ -64,6 +64,24 @@ Just three steps, as promised.
 
 ## Advanced usage
 
-* Customize the icon image
-* Defining the selector for `<INPUT>` tags
-* Multiple sets of buttons on the page
+### Customize icon image
+
+To customize the icon image, set the `DISABLE_BUTTONS_WAIT_IMAGE_URL` property *before* calling `InitializeDisableButtons`. 
+
+Any image format can be used, but SVG is recommended for best scaling to the size of the button.
+
+You can set the property after calling `InitializeDisableButtons`, but you will see a rendering delay 
+unless you preload the image too.
+
+```javascript
+document.addEventListener('DOMContentLoaded', function () {
+  // Use an orange hourglass instead of the default clock icon
+  DisableButtonsOnClick.utils.DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://icongr.am/octicons/hourglass.svg?color=ff8000"
+  DisableButtonsOnClick.utils.InitializeDisableButtons();
+});
+```
+
+### Defining the selector for `<INPUT>` tags
+
+
+### Multiple sets of buttons on the page
