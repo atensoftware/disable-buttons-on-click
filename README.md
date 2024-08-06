@@ -26,19 +26,33 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 * Show a static, non-animated wait icon in the background of the button, auto-sized to the button (absolute zero layout shift)
 * Three-step implementation using declarative-syntax
 * Only select buttons are disabled, not the whole page, allowing user to continue multi-tasking
+* High performance
 
 ## How to use
 
-1. Include the script in `<HEAD>` section of the page: `<script src="disable-buttons-on-click.js">`
-   - You can include this script site-wide without performance impact, since it only defines functions and does not run anything.
-1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` in the onload event to set up the buttons.
-   - Plain Javascript in `<HEAD>` tag:
-     `document.addEventListener('DOMContentLoaded', function () { DisableButtonsOnClick.utils.InitializeDisableButtons(); });`
-   - Using jQuery: `$(document).ready(function() { DisableButtonsOnClick.utils.InitializeDisableButtons(); });`
-3. Assign the `DisableOnClick` class to the buttons that should be disabled on click.
-   - `<button type="submit" class="DisableOnClick">Any markup here</button>`
-   - `<button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>`
-   - `<button type="reset" class="DisableOnClick">Reset</button>` - Note: 'reset' buttons do not trigger the disabling logic
+1. Include the script in `<HEAD>` section of the page (or all pages in your site):
+   ```
+   <script src="disable-buttons-on-click.js">
+   ```
+1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` when the page loads to set up the buttons.
+   - Plain Javascript:
+     ```
+     document.addEventListener('DOMContentLoaded', function () {
+       DisableButtonsOnClick.utils.InitializeDisableButtons();
+     });
+     ```
+   - Using jQuery:
+     ```
+     $(document).ready(function() {
+       DisableButtonsOnClick.utils.InitializeDisableButtons();
+     });
+     ```
+3. Assign the `DisableOnClick` class to the buttons that should be disabled on click.  Examples:
+   ```
+   <button type="submit" class="DisableOnClick">Any markup here</button>
+   <button type="button" onclick="DoSomething();" class="DisableOnClick">Any markup here</button>
+   <button type="reset" class="DisableOnClick">Reset</button> (Note: 'reset' buttons do not trigger the disabling logic)
+   ```
 
 Just three steps, as promised.
 
