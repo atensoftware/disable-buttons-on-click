@@ -81,7 +81,7 @@ DisableButtonsOnClick.utils = {
 			{
 				formToSubmit.submit();
 			}
-			else if (typeof formToSubmit.reportValidity === 'function') {
+			else if (typeof formToSubmit.reportValidity === 'function')
 			{
 				formToSubmit.reportValidity();
 			}
