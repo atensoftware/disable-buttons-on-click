@@ -105,10 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 ### Defining the selector for `<INPUT>` tags
 
-*coming soon*
+*to do*
 
 ### Multiple sets of buttons on the page
 
-*coming soon*
-
-*coming soon*
+*to do*
