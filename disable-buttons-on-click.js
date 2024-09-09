@@ -2,7 +2,7 @@
 var DisableButtonsOnClick = DisableButtonsOnClick || {};
 DisableButtonsOnClick.utils = {
 	// Define the wait image URL
-	const DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/clock.svg",
+	DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/clock.svg",
 
 	// Attach event listeners to each button on the page that matches the selector
 	InitializeDisableButtons: function (selectors) {
