@@ -48,6 +48,23 @@ DisableButtonsOnClick.utils = {
 		// NOTE: This is not necessarily the same as the 'clicked' element,
 		//    which could be a child element of the button.
 		let clickedButton = event.currentTarget;
+
+		// If a submit button was clicked, and the form is not valid, do nothing
+		//  except report the validity
+		if (clickedButton.tagName === 'BUTTON' && clickedButton.type === 'submit')
+		{
+			let formToSubmit = clickedButton.form;
+			// Return if the form is invalid
+			if (formToSubmit.checkValidity() == false)
+			{
+				// Report validity if supported
+				if(typeof formToSubmit.reportValidity === 'function')
+				{
+					formToSubmit.reportValidity();
+				}
+				return;
+			}
+		}
 		
 		// Loop through each button
 		buttonNodeList.forEach(buttonNode => {
@@ -76,14 +93,10 @@ DisableButtonsOnClick.utils = {
 		if (clickedButton.tagName === 'BUTTON' && clickedButton.type === 'submit')
 		{
 			let formToSubmit = clickedButton.form;
-			// Check if the form is valid to support 'required' attributes
+			// Submit the form if it is valid, support 'required' attributes
 			if (formToSubmit.checkValidity() == true)
 			{
 				formToSubmit.submit();
-			}
-			else if (typeof formToSubmit.reportValidity === 'function')
-			{
-				formToSubmit.reportValidity();
 			}
 		}
 	}
