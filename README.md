@@ -24,7 +24,9 @@ open-source Javascript library to  disable a set of buttons when one button in t
 * Production-tested code
 * Single Javascript file with no dependencies
 * Include via jsDelivr CDN
-
+* Free and open-source
+* High performance
+  
 ## Problem statement
 
 Consider a web page with multiple buttons using standard `<BUTTON>` elements.  When the user clicks one of the submit buttons, frequently, the page does not respond immediately.  When this happens, the user may do any of the following, causing the problems noted:
@@ -32,6 +34,7 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 * Click the submit button again, repeatedly - This can cause duplicate submission of the form
 * Click a different submit button - The first submission may not be processed before the second one
 * Switch to a different window and then switch back - The user may not remember which button they clicked, or if they had clicked a button
+* Accidentally double-click the submit button
 
 ## Typical solutions, and their drawbacks
 
@@ -43,12 +46,9 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 
 ## Solution provided by this script
 
-* Free and open-source
-* Single script with no dependencies
 * Show a static, non-animated wait icon in the background of the button, auto-sized to the button (absolute zero layout shift)
-* Three-step implementation using declarative-syntax
 * Only designated buttons are disabled, not the whole page, allowing user to continue multi-tasking
-* High performance
+* Three-step implementation using declarative-syntax
 
 ## How to use
 
