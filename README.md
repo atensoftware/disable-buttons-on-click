@@ -54,7 +54,7 @@ Consider a web page with multiple buttons using standard `<BUTTON>` elements.  W
 
 1. Include the script in `<HEAD>` section of the page (or all pages in your site):
    ```html
-   <script src="https://cdn.jsdelivr.net/gh/atensoftware/disable-buttons-on-click@latest/disable-buttons-on-click.js">
+   <script src="https://cdn.jsdelivr.net/gh/atensoftware/disable-buttons-on-click@latest/disable-buttons-on-click.js"></script>
    ```
 1. On the page with the `<BUTTON>` tags, call `InitializeDisableButtons` when the page loads to set up the buttons.
    - Plain Javascript:
