@@ -2,7 +2,7 @@
 var DisableButtonsOnClick = DisableButtonsOnClick || {};
 DisableButtonsOnClick.utils = {
 	// Define the wait image URL
-	DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/clock.svg",
+	const DISABLE_BUTTONS_WAIT_IMAGE_URL: "https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/clock.svg",
 
 	// Attach event listeners to each button on the page that matches the selector
 	InitializeDisableButtons: function (selectors) {
@@ -17,8 +17,8 @@ DisableButtonsOnClick.utils = {
 		buttonNodeList.forEach(buttonNode => {
 			// Do not attach a click handler to reset buttons.
 			// These can be disabled, but do not disable anything
-			if (buttonNode.tagName === 'BUTTON'
-				&& buttonNode.type === 'reset') {
+			if (buttonNode.tagName === 'BUTTON' && buttonNode.type === 'reset')
+			{
 				return;
 			}
 
@@ -44,6 +44,11 @@ DisableButtonsOnClick.utils = {
 		// Get all buttons
 		var buttonNodeList = document.querySelectorAll(selectors, event);
 
+		// Get element to which the event handler is attached (always a button).
+		// NOTE: This is not necessarily the same as the 'clicked' element,
+		//    which could be a child element of the button.
+		let clickedButton = event.currentTarget;
+		
 		// Loop through each button
 		buttonNodeList.forEach(buttonNode => {
 			// Disable the button
@@ -53,7 +58,8 @@ DisableButtonsOnClick.utils = {
 			buttonNode.classList.add("btn-disabled");
 
 			// Only the clicked button gets the wait icon
-			if (event.target == buttonNode) {
+			if (clickedButton == buttonNode)
+			{
 				// Wrap button contents in a span
 				buttonNode.innerHTML = '<span style="opacity: 0.4;">' + buttonNode.innerHTML + '</span>';
 
@@ -65,10 +71,20 @@ DisableButtonsOnClick.utils = {
 			}
 		});
 
-		// Since the submit buttons are disabled, they will no trigger a form submit
+		// Since the submit buttons are disabled, they will not trigger a form submit
 		// So manually submit the form instead if it is the event target
-		if (event.target.tagName === 'BUTTON' && event.target.type === 'submit') {
-			event.target.form.submit();
+		if (clickedButton.tagName === 'BUTTON' && clickedButton.type === 'submit')
+		{
+			let formToSubmit = clickedButton.form;
+			// Check if the form is valid to support 'required' attributes
+			if (formToSubmit.checkValidity() == true)
+			{
+				formToSubmit.submit();
+			}
+			else if (typeof formToSubmit.reportValidity === 'function') {
+			{
+				formToSubmit.reportValidity();
+			}
 		}
 	}
 };
