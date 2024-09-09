@@ -1,7 +1,29 @@
-# -- DRAFT --
+# Disable Buttons On Click - Javascript Include File
 
-# disable-buttons-on-click
-Javascript to disable a set of buttons on a web page when one button in the set is clicked.  Shows a wait icon on the clicked button.
+Greatly improve your website's user interface (UI) experience with this light-weight, 
+open-source Javascript library to  disable a set of buttons when one button in the set is clicked.
+
+## Key Benefits
+
+* Prevent duplicate form submisions via doubled post
+* Prevent double-clicks from submitting a form twice
+* Prevent user from clicking other buttons on the form while another one is processing
+* Display to the user that the website is processing
+* Display to the user which button they clicked
+* Allow other elements of the page, such as links and scrolling, to continue to be functional
+
+## Key UI Features
+
+* Disable all or a subset of buttons on the page
+* Automatically shows a wait icon on the clicked button
+* Zero layout shift
+
+## Key Developer Features
+
+* Declarative syntax
+* Production-tested code
+* Single Javascript file with no dependencies
+* Include via CDN (coming soon)
 
 ## Problem statement
 
