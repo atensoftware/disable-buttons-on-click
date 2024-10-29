@@ -96,6 +96,19 @@ DisableButtonsOnClick.utils = {
 			// Submit the form if it is valid, support 'required' attributes
 			if (formToSubmit.checkValidity() == true)
 			{
+				// If the disabled button has a name/value, copy it into
+				// a hidden field so it gets submitted with the form
+				// This is not needed for any other buttons of any type
+				// with a name assigned.
+				if(clickedButton.getAttribute("name"))
+				{
+					const hiddenInput = document.createElement("input");
+					hiddenInput.type = "hidden";
+					hiddenInput.name = clickedButton.getAttribute("name");
+					hiddenInput.value = clickedButton.getAttribute("value");
+					formToSubmit.appendChild(hiddenInput);
+				}
+
 				formToSubmit.submit();
 			}
 		}
