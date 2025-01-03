@@ -110,3 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
 ### Multiple sets of buttons on the page
 
 *to do*
+
+## Known Limitations
+
+* If the button has a CSS 'active' class defined that changes its appearance when depressed, that will not be disabled.
+* If the button action does a file download (attachment), the button will not be restored when the download completes.
+
